@@ -1,5 +1,18 @@
+@import './components/user/styles.css';
+
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
 }
+.container{
+  width: 100%;
+  background: #D8D8D8;
+}
+
+.heading{
+  font-size: 36px;
+  color:#007FA3;
+  margin-left: 60px;
+}
+

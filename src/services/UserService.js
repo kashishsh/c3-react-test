@@ -23,4 +23,10 @@ export default class UserService {
         "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
     }
   ];
+  async getUsers() {
+    const response = await fetch(`${this.API_URL}?page=1&per_page=10`);
+    const json = await response.json();
+
+    return json.data;
+  }
 }
