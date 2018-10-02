@@ -15,6 +15,7 @@ export default class PearsonUsers extends Component {
       users: this.UserService.defaultUsers
     };
   }
+
   async getUsers() {
     const users = await this.UserService.getUsers();
 
@@ -26,19 +27,23 @@ export default class PearsonUsers extends Component {
       }
     });
   }
+
   componentDidMount() {
     this.getUsers();
   }
+
   removeDuplicateUsers(users, prop = 'id') {
     return users.filter((obj, pos, arr) => {
         return arr.map(mapObj => mapObj[prop]).indexOf(obj[prop]) === pos;
     });
   }
+
   deleteUser(id) {
     this.setState({
       users: this.state.users.filter(user => user.id !== id )
     });
   }
+
   render() {
     return (
       <div>
